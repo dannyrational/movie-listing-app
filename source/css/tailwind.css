@@ -11,13 +11,73 @@ body {
 }
 
 header {
-    @apply bg-black sm:h-screen;
+    @apply bg-black p-3 pb-6 sm:h-screen;
 }
 
 header h1 {
-    @apply text-white;
+    @apply text-white mb-2 text-xl;
+}
+
+.search {
+    @apply w-full;
 }
 
 .movie-container {
-    @apply container mx-auto sm:max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-5xl 2xl:max-w-7xl;
+    @apply container mx-auto p-3 sm:max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-5xl 2xl:max-w-7xl;
 }
+
+.movie-container > p {
+    @apply text-white text-lg mb-2;
+}
+
+.movies {
+    @apply grid grid-cols-12;
+}
+
+.movie {
+    @apply col-span-12 lg:col-span-6 2xl:col-span-4 flex flex-col sm:flex-row items-center sm:items-start bg-white p-3;
+}
+
+.movie img {
+    @apply mb-3 sm:mb-0 sm:mr-3
+}
+
+.details {
+    @apply space-y-1 text-sm;
+}
+
+.details h2 {
+    @apply font-bold text-lg;
+}
+
+.rate {
+    @apply font-medium;
+}
+
+.rating {
+    @apply inline-block text-white bg-yellow-600 px-1 rounded;
+}
+
+.overview {
+    @apply overflow-y-auto h-20 sm:h-36 pr-1;
+}
+
+.overview::-webkit-scrollbar {
+    height: 5px;
+    width: 4px;
+    border: 1px solid gray;
+    background: white;
+    
+}
+
+.overview::-webkit-scrollbar-track {
+    --webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.overview::-webkit-scrollbar-thumb {
+    background: gray;
+    outline: 1px solid gray;
+}
+
+
+
