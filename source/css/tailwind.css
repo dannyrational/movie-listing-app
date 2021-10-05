@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-gray-800;
+}
+
+.main {
+    @apply sm:flex;
+}
+
+header {
+    @apply bg-black sm:h-screen;
+}
+
+header h1 {
+    @apply text-white;
+}
+
+.movie-container {
+    @apply container mx-auto sm:max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-5xl 2xl:max-w-7xl;
+}
