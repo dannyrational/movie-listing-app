@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 body {
-    @apply bg-gray-800;
+    @apply bg-blue-800;
 }
 
 .main {
-    @apply sm:flex;
+    @apply md:grid-cols-12 md:grid;
 }
 
 header {
-    @apply bg-black p-3 pb-6 sm:h-screen;
+    @apply p-3 pb-6 bg-trueGray-800 md:h-screen md:col-span-3 lg:col-span-2;
 }
 
 header h1 {
-    @apply text-white mb-2 text-xl;
+    @apply mb-2 text-xl text-white;
 }
 
 .search {
@@ -23,23 +23,23 @@ header h1 {
 }
 
 .movie-container {
-    @apply container mx-auto p-3 sm:max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-5xl 2xl:max-w-7xl;
+    @apply container p-6 mx-auto sm:p-16 lg:max-w-none md:overflow-y-scroll md:h-screen md:col-span-9 lg:col-span-10;
 }
 
 .movie-container > p {
-    @apply text-white text-lg mb-2;
+    @apply mb-2 text-lg text-white;
 }
 
 .movies {
-    @apply grid grid-cols-12;
+    @apply grid grid-cols-12 gap-y-4 lg:gap-4;
 }
 
 .movie {
-    @apply col-span-12 lg:col-span-6 2xl:col-span-4 flex flex-col sm:flex-row items-center sm:items-start bg-white p-3;
+    @apply flex col-span-12 p-3 overflow-hidden bg-white lg:col-span-6 2xl:col-span-4 sm:flex-row sm:items-start;
 }
 
-.movie img {
-    @apply mb-3 sm:mb-0 sm:mr-3
+.movie-poster {
+    @apply mr-3 max-w-[125px];
 }
 
 .details {
@@ -47,7 +47,7 @@ header h1 {
 }
 
 .details h2 {
-    @apply font-bold text-lg;
+    @apply text-lg font-bold;
 }
 
 .rate {
@@ -55,11 +55,11 @@ header h1 {
 }
 
 .rating {
-    @apply inline-block text-white bg-yellow-600 px-1 rounded;
+    @apply inline-block px-1 text-white bg-yellow-600 rounded;
 }
 
 .overview {
-    @apply overflow-y-auto h-20 sm:h-36 pr-1;
+    @apply pr-1 overflow-y-auto max-h-24 sm:h-32;
 }
 
 .overview::-webkit-scrollbar {

@@ -5,7 +5,11 @@ module.exports = {
   purge: ['./**/*.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'trueGray': colors.trueGray,
+      }
+    },
   },
   variants: {
     extend: {},
