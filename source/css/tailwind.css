@@ -35,7 +35,7 @@ header h1 {
 }
 
 .movie {
-    @apply flex col-span-12 p-3 overflow-hidden bg-white lg:col-span-6 2xl:col-span-4 sm:flex-row sm:items-start;
+    @apply flex items-start col-span-12 p-3 overflow-hidden bg-white lg:col-span-6 2xl:col-span-4 sm:flex-row sm:items-start;
 }
 
 .movie-poster {
