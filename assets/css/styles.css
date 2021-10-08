@@ -1025,10 +1025,18 @@ body {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
   --tw-bg-opacity: 1;
   background-color: rgba(38, 38, 38, var(--tw-bg-opacity));
-  padding: 0.75rem;
+  padding: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  header {
+    padding: 4rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1039,6 +1047,10 @@ header {
   header {
     height: 100vh;
   }
+
+  header {
+    padding: 0.75rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1047,12 +1059,10 @@ header {
   }
 }
 
-header h1 {
+.logo {
   margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: block;
+  align-self: center;
 }
 
 .search {
@@ -1129,14 +1139,6 @@ header h1 {
   }
 }
 
-.movie-container > p {
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-}
-
 .movies {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1151,12 +1153,12 @@ header h1 {
 
 .movie {
   grid-column: span 12 / span 12;
-  display: flex;
-  align-items: flex-start;
   overflow: hidden;
   --tw-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   padding: 0.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 @media (min-width: 640px) {
@@ -1166,6 +1168,11 @@ header h1 {
 
   .movie {
     align-items: flex-start;
+  }
+
+  .movie {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 }
 
@@ -1181,20 +1188,29 @@ header h1 {
   }
 }
 
+.poster_title {
+  display: flex;
+}
+
+.poster_title > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .movie-poster {
   margin-right: 0.75rem;
   max-width: 125px;
+}
+
+.details {
+  width: 100%;
 }
 
 .details > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
-}
-
-.details {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .details h2 {
@@ -1204,6 +1220,8 @@ header h1 {
 }
 
 .rate {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 500;
 }
 
@@ -1218,10 +1236,24 @@ header h1 {
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
+.release-date {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+.date {
+  display: block;
+  font-weight: 400;
+}
+
 .overview {
+  margin-top: 1rem;
   max-height: 6rem;
   overflow-y: auto;
   padding-right: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 @media (min-width: 640px) {

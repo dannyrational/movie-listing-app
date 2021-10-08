@@ -11,11 +11,11 @@ body {
 }
 
 header {
-    @apply p-3 pb-6 bg-trueGray-800 md:h-screen md:col-span-3 lg:col-span-2;
+    @apply flex flex-col p-6 pb-6 sm:p-16 md:p-3 bg-trueGray-800 md:h-screen md:col-span-3 lg:col-span-2;
 }
 
-header h1 {
-    @apply mb-2 text-xl text-white;
+.logo {
+    @apply self-center block mb-2;
 }
 
 .search {
@@ -26,16 +26,16 @@ header h1 {
     @apply container p-6 mx-auto sm:p-16 lg:max-w-none md:overflow-y-scroll md:h-screen md:col-span-9 lg:col-span-10;
 }
 
-.movie-container > p {
-    @apply mb-2 text-lg text-white;
-}
-
 .movies {
     @apply grid grid-cols-12 gap-y-4 lg:gap-4;
 }
 
 .movie {
-    @apply flex items-start col-span-12 p-3 overflow-hidden bg-white lg:col-span-6 2xl:col-span-4 sm:flex-row sm:items-start;
+    @apply col-span-12 p-3 py-6 overflow-hidden bg-white sm:py-3 lg:col-span-6 2xl:col-span-4 sm:flex-row sm:items-start;
+}
+
+.poster_title {
+    @apply flex space-x-2;
 }
 
 .movie-poster {
@@ -43,7 +43,7 @@ header h1 {
 }
 
 .details {
-    @apply space-y-1 text-sm;
+    @apply w-full space-y-1;
 }
 
 .details h2 {
@@ -51,15 +51,23 @@ header h1 {
 }
 
 .rate {
-    @apply font-medium;
+    @apply text-sm font-medium;
 }
 
 .rating {
     @apply inline-block px-1 text-white bg-yellow-600 rounded;
 }
 
+.release-date {
+    @apply text-sm font-medium;
+}
+
+.date {
+    @apply block font-normal;
+}
+
 .overview {
-    @apply pr-1 overflow-y-auto max-h-24 sm:h-32;
+    @apply pr-1 mt-4 overflow-y-auto text-sm max-h-24 sm:h-32;
 }
 
 .overview::-webkit-scrollbar {

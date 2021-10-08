@@ -20,8 +20,7 @@ let search = document.querySelector('.search')
 function getMovies(url) {
     fetch(url)
         .then(resp => resp.json())
-        .then(data => displayMovies(data.results))
-
+        .then(data => displayMovies(data.results) + console.log(data))
 }
 getMovies(apiURL)
 
@@ -30,16 +29,18 @@ function displayMovies(movies) {
 
     movies.forEach(movie => {
         const div = document.createElement('div');
-
         div.classList.add('movie');
-
         div.innerHTML = `
+        <div class="poster_title">
         <img src="${imgPATH + movie.poster_path}" alt="" class="movie-poster">        
         <div class="details">
             <h2 class="title">${movie.title}</h2>
             <p class="rate">Rating: <span class="rating">${movie.vote_average}</span></p>
-            <p class="overview">${movie.overview}</p>
-        </div>`;
+            <p class="release-date">Release Date: <span class="date">${movie.release_date}</span></p>
+        </div>
+        </div>
+        <p class="overview">${movie.overview}</p>
+        `;
 
         moviesDiv.appendChild(div);
     })
