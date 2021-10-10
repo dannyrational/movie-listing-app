@@ -39,7 +39,7 @@ header {
 }
 
 .poster_title {
-    @apply flex space-x-2;
+    @apply flex items-start space-x-2;
 }
 
 .movie-poster {

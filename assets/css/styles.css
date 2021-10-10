@@ -1196,6 +1196,7 @@ header {
 
 .poster_title {
   display: flex;
+  align-items: flex-start;
 }
 
 .poster_title > :not([hidden]) ~ :not([hidden]) {
