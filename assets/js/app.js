@@ -1,21 +1,19 @@
-const apiURL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=123cbd0c291165ccb63a6a24a9499b36&page=1'
+// Trending Movies
+const apiURL = 'https://api.themoviedb.org/3/trending/all/week?api_key=123cbd0c291165ccb63a6a24a9499b36&page=1'
 
+// Search
 const searchAPI = 'https://api.themoviedb.org/3/search/movie?&api_key=123cbd0c291165ccb63a6a24a9499b36&query='
 
+// Movies Posters
 const imgPATH = 'https://image.tmdb.org/t/p/w1280'
-
-let moviesDiv = document.querySelector('.movies')
-let form = document.querySelector('form')
-let search = document.querySelector('.search')
+const nullImg = '../assets/images/null_img.svg'
 
 
-// getMovies(apiURL)
-// async function getMovies(url) {
-//     const res = await fetch(url);
-//     const data = await res.json();
+const moviesDiv = document.querySelector('.movies');
+const form = document.querySelector('form');
+const search = document.querySelector('.search');
+const trending = document.querySelector('.trending');
 
-//     displayMovies(data.results)
-// }
 
 function getMovies(url) {
     fetch(url)
@@ -32,11 +30,11 @@ function displayMovies(movies) {
         div.classList.add('movie');
         div.innerHTML = `
         <div class="poster_title">
-        <img src="${imgPATH + movie.poster_path}" alt="" class="movie-poster">        
+        <img src="${movie.poster_path === null ? nullImg : imgPATH + movie.poster_path}" alt="" class="movie-poster">        
         <div class="details">
-            <h2 class="title">${movie.title}</h2>
+            <h2 class="title">${movie.title ? movie.title : movie.name}</h2>
             <p class="rate">Rating: <span class="rating">${movie.vote_average}</span></p>
-            <p class="release-date">Release Date: <span class="date">${movie.release_date}</span></p>
+            <p class="release-date">Release Date: <span class="date">${movie.release_date ? movie.release_date : movie.first_air_date}</span></p>
         </div>
         </div>
         <p class="overview">${movie.overview}</p>
@@ -46,9 +44,10 @@ function displayMovies(movies) {
     })
 };
 
+
+// Search Function
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    // moviesDiv.innerHTML = '';
 
     const searchVal = search.value;
 
@@ -56,4 +55,10 @@ form.addEventListener('submit', (e) => {
         getMovies(searchAPI + searchVal);
         search.value = '';
     }
+})
+
+// Trending
+trending.addEventListener('click', (e) => {
+    e.preventDefault();
+    getMovies(apiURL);
 })

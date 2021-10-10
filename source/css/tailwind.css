@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply bg-blue-800;
+    @apply bg-blue-700;
 }
 
 .main {
@@ -20,6 +20,10 @@ header {
 
 .search {
     @apply w-full;
+}
+
+.categories {
+    @apply mt-8 text-white;
 }
 
 .movie-container {

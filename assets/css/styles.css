@@ -1011,7 +1011,7 @@ select {
 
 body {
   --tw-bg-opacity: 1;
-  background-color: rgba(30, 64, 175, var(--tw-bg-opacity));
+  background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
 }
 
 @media (min-width: 768px) {
@@ -1067,6 +1067,12 @@ header {
 
 .search {
   width: 100%;
+}
+
+.categories {
+  margin-top: 2rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 .movie-container {
